@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		454FFC3125FCFD2500E2CC52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC3025FCFD2500E2CC52 /* AppDelegate.swift */; };
-		454FFC3325FCFD2500E2CC52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC3225FCFD2500E2CC52 /* SceneDelegate.swift */; };
-		454FFC3525FCFD2500E2CC52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC3425FCFD2500E2CC52 /* ViewController.swift */; };
 		454FFC3825FCFD2500E2CC52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454FFC3625FCFD2500E2CC52 /* Main.storyboard */; };
 		454FFC3A25FCFD2700E2CC52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454FFC3925FCFD2700E2CC52 /* Assets.xcassets */; };
 		454FFC3D25FCFD2700E2CC52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454FFC3B25FCFD2700E2CC52 /* LaunchScreen.storyboard */; };
+		454FFC4825FCFE4300E2CC52 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC4725FCFE4300E2CC52 /* Theme.swift */; };
+		454FFC4D25FD089700E2CC52 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454FFC4C25FD089700E2CC52 /* Search.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		454FFC2D25FCFD2500E2CC52 /* PodCastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodCastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		454FFC3025FCFD2500E2CC52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		454FFC3225FCFD2500E2CC52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		454FFC3425FCFD2500E2CC52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		454FFC3725FCFD2500E2CC52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		454FFC3925FCFD2700E2CC52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		454FFC3C25FCFD2700E2CC52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		454FFC3E25FCFD2700E2CC52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		454FFC4725FCFE4300E2CC52 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		454FFC4C25FD089700E2CC52 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,23 @@
 		454FFC2F25FCFD2500E2CC52 /* PodCastApp */ = {
 			isa = PBXGroup;
 			children = (
+				454FFC4B25FD088B00E2CC52 /* Search */,
 				454FFC3025FCFD2500E2CC52 /* AppDelegate.swift */,
-				454FFC3225FCFD2500E2CC52 /* SceneDelegate.swift */,
-				454FFC3425FCFD2500E2CC52 /* ViewController.swift */,
 				454FFC3625FCFD2500E2CC52 /* Main.storyboard */,
 				454FFC3925FCFD2700E2CC52 /* Assets.xcassets */,
 				454FFC3B25FCFD2700E2CC52 /* LaunchScreen.storyboard */,
 				454FFC3E25FCFD2700E2CC52 /* Info.plist */,
+				454FFC4725FCFE4300E2CC52 /* Theme.swift */,
 			);
 			path = PodCastApp;
+			sourceTree = "<group>";
+		};
+		454FFC4B25FD088B00E2CC52 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				454FFC4C25FD089700E2CC52 /* Search.storyboard */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +134,7 @@
 			files = (
 				454FFC3D25FCFD2700E2CC52 /* LaunchScreen.storyboard in Resources */,
 				454FFC3A25FCFD2700E2CC52 /* Assets.xcassets in Resources */,
+				454FFC4D25FD089700E2CC52 /* Search.storyboard in Resources */,
 				454FFC3825FCFD2500E2CC52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				454FFC3525FCFD2500E2CC52 /* ViewController.swift in Sources */,
+				454FFC4825FCFE4300E2CC52 /* Theme.swift in Sources */,
 				454FFC3125FCFD2500E2CC52 /* AppDelegate.swift in Sources */,
-				454FFC3325FCFD2500E2CC52 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
