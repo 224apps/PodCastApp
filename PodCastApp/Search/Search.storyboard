@@ -7,22 +7,60 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="yAv-Hu-e58">
             <objects>
-                <tableViewController id="sNA-jp-ley" sceneMemberID="viewController">
+                <tableViewController id="sNA-jp-ley" customClass="SearchViewController" customModule="PodCastApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HnZ-oY-yMB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="lkA-an-OEG" customClass="SearchResultCell" customModule="PodCastApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="94" id="lkA-an-OEG" customClass="SearchResultCell" customModule="PodCastApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lkA-an-OEG" id="T4e-dT-Ttn">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.quarternote.3" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IpC-7h-J9N">
+                                            <rect key="frame" x="12" y="10.5" width="74" height="73"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="74" id="b75-Yw-kc9"/>
+                                                <constraint firstAttribute="height" constant="74" id="dQ1-b5-OAj"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9h-FN-dEN">
+                                            <rect key="frame" x="98" y="45" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH2-cC-yep">
+                                            <rect key="frame" x="98" y="21" width="296" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="IpC-7h-J9N" secondAttribute="bottom" constant="10" id="9PT-p9-4e2"/>
+                                        <constraint firstItem="IpC-7h-J9N" firstAttribute="top" secondItem="T4e-dT-Ttn" secondAttribute="top" constant="10" id="Ezj-Pj-NuQ"/>
+                                        <constraint firstItem="Q9h-FN-dEN" firstAttribute="firstBaseline" secondItem="cH2-cC-yep" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="GET-gc-YoS"/>
+                                        <constraint firstAttribute="trailing" secondItem="cH2-cC-yep" secondAttribute="trailing" constant="20" id="R4w-9p-0Z6"/>
+                                        <constraint firstItem="cH2-cC-yep" firstAttribute="leading" secondItem="IpC-7h-J9N" secondAttribute="trailing" constant="12" id="YZg-fD-weW"/>
+                                        <constraint firstItem="Q9h-FN-dEN" firstAttribute="firstBaseline" secondItem="cH2-cC-yep" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="db2-WA-hBz"/>
+                                        <constraint firstItem="cH2-cC-yep" firstAttribute="top" secondItem="T4e-dT-Ttn" secondAttribute="topMargin" constant="10" id="k2G-Be-9zl"/>
+                                        <constraint firstItem="Q9h-FN-dEN" firstAttribute="width" secondItem="cH2-cC-yep" secondAttribute="width" multiplier="0.141892" id="kCs-IN-Hux"/>
+                                        <constraint firstItem="Q9h-FN-dEN" firstAttribute="leading" secondItem="cH2-cC-yep" secondAttribute="leading" id="wfY-vz-cB3"/>
+                                        <constraint firstItem="IpC-7h-J9N" firstAttribute="leading" secondItem="T4e-dT-Ttn" secondAttribute="leading" constant="12" id="zjD-AI-1lS"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="artworkImageView" destination="IpC-7h-J9N" id="8wP-Ls-iBA"/>
+                                    <outlet property="podcastTitleLabel" destination="cH2-cC-yep" id="nM7-CK-4fc"/>
+                                    <outlet property="podcstAuthorLabel" destination="Q9h-FN-dEN" id="HQk-ib-zyK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -58,6 +96,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="music.quarternote.3" catalog="system" width="128" height="103"/>
         <image name="tab-icon-search" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
