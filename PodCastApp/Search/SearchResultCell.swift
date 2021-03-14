@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchResultCell: UITableViewCell {
     
@@ -18,6 +19,13 @@ class SearchResultCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        
+        artworkImageView.backgroundColor = Theme.Colors.gray3
+        artworkImageView.layer.cornerRadius = 10.0
+        artworkImageView.layer.masksToBounds = true
+        
+        
+        
         backgroundView = UIView()
         backgroundView?.backgroundColor = Theme.Colors.gray4
         backgroundColor = Theme.Colors.gray4
@@ -29,9 +37,27 @@ class SearchResultCell: UITableViewCell {
         podcstAuthorLabel.textColor = Theme.Colors.gray1
     }
 
-    func configure(with searchResult: SearchResultViewModel){
-        podcastTitleLabel.text = searchResult.title
-        podcstAuthorLabel.text = searchResult.author
+    func configure(with result: SearchResultViewModel){
+        
+        podcastTitleLabel.text = result.title
+        podcstAuthorLabel.text = result.author
+        
+        if let url = result.imageUrl {
+            let options: KingfisherOptionsInfo = [
+                .transition(.fade(0.5))
+            ]
+            artworkImageView.kf.setImage(with: url,options: options)
+        }
+        
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        podcastTitleLabel.textColor = nil
+        podcstAuthorLabel.textColor = nil
+        
+        artworkImageView.kf.cancelDownloadTask()
+        artworkImageView.image = nil
     }
     
 }
