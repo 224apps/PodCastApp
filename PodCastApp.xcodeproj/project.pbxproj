@@ -21,6 +21,9 @@
 		454FFC6B25FE968600E2CC52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 454FFC6A25FE968600E2CC52 /* Kingfisher */; };
 		454FFC6F25FEA1C300E2CC52 /* TopPodcastsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC6E25FEA1C300E2CC52 /* TopPodcastsAPI.swift */; };
 		454FFC7825FEDB4400E2CC52 /* TopPodcastAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC7725FEDB4400E2CC52 /* TopPodcastAPITests.swift */; };
+		454FFC8625FEF23100E2CC52 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC8525FEF23100E2CC52 /* SearchResult.swift */; };
+		454FFC8A25FFACEB00E2CC52 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC8925FFACEB00E2CC52 /* APIClient.swift */; };
+		454FFC9025FFB65300E2CC52 /* PodcastSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC8F25FFB65300E2CC52 /* PodcastSearchAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		454FFC7525FEDB4400E2CC52 /* PodCastAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodCastAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454FFC7725FEDB4400E2CC52 /* TopPodcastAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPodcastAPITests.swift; sourceTree = "<group>"; };
 		454FFC7925FEDB4400E2CC52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		454FFC8525FEF23100E2CC52 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		454FFC8925FFACEB00E2CC52 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		454FFC8F25FFB65300E2CC52 /* PodcastSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 			children = (
 				454FFC4C25FD089700E2CC52 /* Search.storyboard */,
 				454FFC5A25FD189300E2CC52 /* SearchViewController.swift */,
+				454FFC8525FEF23100E2CC52 /* SearchResult.swift */,
 				454FFC5325FD178800E2CC52 /* SearchResultCell.swift */,
 			);
 			path = Search;
@@ -130,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				454FFC6E25FEA1C300E2CC52 /* TopPodcastsAPI.swift */,
+				454FFC8F25FFB65300E2CC52 /* PodcastSearchAPI.swift */,
+				454FFC8925FFACEB00E2CC52 /* APIClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -251,9 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				454FFC6625FD262900E2CC52 /* SearchResultViewModel.swift in Sources */,
+				454FFC8625FEF23100E2CC52 /* SearchResult.swift in Sources */,
+				454FFC9025FFB65300E2CC52 /* PodcastSearchAPI.swift in Sources */,
 				454FFC4825FCFE4300E2CC52 /* Theme.swift in Sources */,
 				454FFC5F25FD18B900E2CC52 /* ReusableView.swift in Sources */,
 				454FFC5425FD178800E2CC52 /* SearchResultCell.swift in Sources */,
+				454FFC8A25FFACEB00E2CC52 /* APIClient.swift in Sources */,
 				454FFC5B25FD189300E2CC52 /* SearchViewController.swift in Sources */,
 				454FFC6F25FEA1C300E2CC52 /* TopPodcastsAPI.swift in Sources */,
 				454FFC3125FCFD2500E2CC52 /* AppDelegate.swift in Sources */,

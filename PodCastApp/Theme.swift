@@ -7,18 +7,22 @@
 
 import UIKit
 
-
 struct Theme {
     
     static func apply(to window: UIWindow) {
         window.tintColor = Colors.purple
         
         let tabBar  = UITabBar.appearance()
-        tabBar.barTintColor = Colors.gray3
+        tabBar.barTintColor = Colors.gray4
         
         let navBar = UINavigationBar.appearance()
-        navBar.tintColor = Colors.gray3
+        navBar.barTintColor = Colors.gray4
+        navBar.barStyle = .black
         navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Colors.gray0]
+        
+        
+        let searchBarTextFields = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        searchBarTextFields.defaultTextAttributes = [.foregroundColor: Colors.gray1, .font: UIFont.boldSystemFont(ofSize: 14)]
     }
     
     struct Colors {

@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 
+
 class SearchResultCell: UITableViewCell {
     
     @IBOutlet weak var artworkImageView: UIImageView!
@@ -18,7 +19,6 @@ class SearchResultCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         
         artworkImageView.backgroundColor = Theme.Colors.gray3
         artworkImageView.layer.cornerRadius = 10.0
@@ -37,12 +37,12 @@ class SearchResultCell: UITableViewCell {
         podcstAuthorLabel.textColor = Theme.Colors.gray1
     }
 
-    func configure(with result: SearchResultViewModel){
+    func configure(with result: SearchResult){
         
         podcastTitleLabel.text = result.title
         podcstAuthorLabel.text = result.author
         
-        if let url = result.imageUrl {
+        if let url = result.artworkUrl {
             let options: KingfisherOptionsInfo = [
                 .transition(.fade(0.5))
             ]
