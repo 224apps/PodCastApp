@@ -19,7 +19,19 @@
 		454FFC6325FD251C00E2CC52 /* UITableView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC6225FD251C00E2CC52 /* UITableView+ReuseIdentifier.swift */; };
 		454FFC6625FD262900E2CC52 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC6525FD262900E2CC52 /* SearchResultViewModel.swift */; };
 		454FFC6B25FE968600E2CC52 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 454FFC6A25FE968600E2CC52 /* Kingfisher */; };
+		454FFC6F25FEA1C300E2CC52 /* TopPodcastsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC6E25FEA1C300E2CC52 /* TopPodcastsAPI.swift */; };
+		454FFC7825FEDB4400E2CC52 /* TopPodcastAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC7725FEDB4400E2CC52 /* TopPodcastAPITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		454FFC7A25FEDB4400E2CC52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454FFC2525FCFD2500E2CC52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 454FFC2C25FCFD2500E2CC52;
+			remoteInfo = PodCastApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		454FFC2D25FCFD2500E2CC52 /* PodCastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodCastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +47,10 @@
 		454FFC5E25FD18B900E2CC52 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		454FFC6225FD251C00E2CC52 /* UITableView+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 		454FFC6525FD262900E2CC52 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
+		454FFC6E25FEA1C300E2CC52 /* TopPodcastsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPodcastsAPI.swift; sourceTree = "<group>"; };
+		454FFC7525FEDB4400E2CC52 /* PodCastAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodCastAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		454FFC7725FEDB4400E2CC52 /* TopPodcastAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPodcastAPITests.swift; sourceTree = "<group>"; };
+		454FFC7925FEDB4400E2CC52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +62,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		454FFC7225FEDB4400E2CC52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -53,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				454FFC2F25FCFD2500E2CC52 /* PodCastApp */,
+				454FFC7625FEDB4400E2CC52 /* PodCastAppTests */,
 				454FFC2E25FCFD2500E2CC52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				454FFC2D25FCFD2500E2CC52 /* PodCastApp.app */,
+				454FFC7525FEDB4400E2CC52 /* PodCastAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +93,7 @@
 		454FFC2F25FCFD2500E2CC52 /* PodCastApp */ = {
 			isa = PBXGroup;
 			children = (
+				454FFC6D25FEA1B000E2CC52 /* API */,
 				454FFC5D25FD189E00E2CC52 /* Utility */,
 				454FFC4725FCFE4300E2CC52 /* Theme.swift */,
 				454FFC4B25FD088B00E2CC52 /* Search */,
@@ -100,6 +126,23 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		454FFC6D25FEA1B000E2CC52 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				454FFC6E25FEA1C300E2CC52 /* TopPodcastsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		454FFC7625FEDB4400E2CC52 /* PodCastAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				454FFC7725FEDB4400E2CC52 /* TopPodcastAPITests.swift */,
+				454FFC7925FEDB4400E2CC52 /* Info.plist */,
+			);
+			path = PodCastAppTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +166,24 @@
 			productReference = 454FFC2D25FCFD2500E2CC52 /* PodCastApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		454FFC7425FEDB4400E2CC52 /* PodCastAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 454FFC7C25FEDB4400E2CC52 /* Build configuration list for PBXNativeTarget "PodCastAppTests" */;
+			buildPhases = (
+				454FFC7125FEDB4400E2CC52 /* Sources */,
+				454FFC7225FEDB4400E2CC52 /* Frameworks */,
+				454FFC7325FEDB4400E2CC52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				454FFC7B25FEDB4400E2CC52 /* PBXTargetDependency */,
+			);
+			name = PodCastAppTests;
+			productName = PodCastAppTests;
+			productReference = 454FFC7525FEDB4400E2CC52 /* PodCastAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -134,6 +195,10 @@
 				TargetAttributes = {
 					454FFC2C25FCFD2500E2CC52 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					454FFC7425FEDB4400E2CC52 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 454FFC2C25FCFD2500E2CC52;
 					};
 				};
 			};
@@ -154,6 +219,7 @@
 			projectRoot = "";
 			targets = (
 				454FFC2C25FCFD2500E2CC52 /* PodCastApp */,
+				454FFC7425FEDB4400E2CC52 /* PodCastAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -170,6 +236,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		454FFC7325FEDB4400E2CC52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -182,12 +255,29 @@
 				454FFC5F25FD18B900E2CC52 /* ReusableView.swift in Sources */,
 				454FFC5425FD178800E2CC52 /* SearchResultCell.swift in Sources */,
 				454FFC5B25FD189300E2CC52 /* SearchViewController.swift in Sources */,
+				454FFC6F25FEA1C300E2CC52 /* TopPodcastsAPI.swift in Sources */,
 				454FFC3125FCFD2500E2CC52 /* AppDelegate.swift in Sources */,
 				454FFC6325FD251C00E2CC52 /* UITableView+ReuseIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		454FFC7125FEDB4400E2CC52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				454FFC7825FEDB4400E2CC52 /* TopPodcastAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		454FFC7B25FEDB4400E2CC52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 454FFC2C25FCFD2500E2CC52 /* PodCastApp */;
+			targetProxy = 454FFC7A25FEDB4400E2CC52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		454FFC3625FCFD2500E2CC52 /* Main.storyboard */ = {
@@ -363,6 +453,46 @@
 			};
 			name = Release;
 		};
+		454FFC7D25FEDB4400E2CC52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7XGX6TD7GL;
+				INFOPLIST_FILE = PodCastAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.224apps.PodCastAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodCastApp.app/PodCastApp";
+			};
+			name = Debug;
+		};
+		454FFC7E25FEDB4400E2CC52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7XGX6TD7GL;
+				INFOPLIST_FILE = PodCastAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.224apps.PodCastAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodCastApp.app/PodCastApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -380,6 +510,15 @@
 			buildConfigurations = (
 				454FFC4225FCFD2700E2CC52 /* Debug */,
 				454FFC4325FCFD2700E2CC52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		454FFC7C25FEDB4400E2CC52 /* Build configuration list for PBXNativeTarget "PodCastAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				454FFC7D25FEDB4400E2CC52 /* Debug */,
+				454FFC7E25FEDB4400E2CC52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
