@@ -24,6 +24,14 @@
 		454FFC8625FEF23100E2CC52 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC8525FEF23100E2CC52 /* SearchResult.swift */; };
 		454FFC8A25FFACEB00E2CC52 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC8925FFACEB00E2CC52 /* APIClient.swift */; };
 		454FFC9025FFB65300E2CC52 /* PodcastSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC8F25FFB65300E2CC52 /* PodcastSearchAPI.swift */; };
+		454FFC9725FFD04600E2CC52 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = 454FFC9625FFD04600E2CC52 /* FeedKit */; };
+		454FFC9F25FFD06500E2CC52 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9E25FFD06500E2CC52 /* Podcast.swift */; };
+		454FFCA325FFD0C200E2CC52 /* PodcastFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCA225FFD0C200E2CC52 /* PodcastFeedLoader.swift */; };
+		454FFCA725FFD11F00E2CC52 /* PodcastLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCA625FFD11F00E2CC52 /* PodcastLoadingError.swift */; };
+		454FFCAD260027F400E2CC52 /* PodcastFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCAC260027F400E2CC52 /* PodcastFeedLoaderTests.swift */; };
+		454FFCB82601010300E2CC52 /* PodcastDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454FFCB72601010300E2CC52 /* PodcastDetail.storyboard */; };
+		454FFCBC2601014800E2CC52 /* PodcastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */; };
+		454FFCC02601138C00E2CC52 /* PodcastDetailHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +65,13 @@
 		454FFC8525FEF23100E2CC52 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		454FFC8925FFACEB00E2CC52 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		454FFC8F25FFB65300E2CC52 /* PodcastSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchAPI.swift; sourceTree = "<group>"; };
+		454FFC9E25FFD06500E2CC52 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		454FFCA225FFD0C200E2CC52 /* PodcastFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastFeedLoader.swift; sourceTree = "<group>"; };
+		454FFCA625FFD11F00E2CC52 /* PodcastLoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastLoadingError.swift; sourceTree = "<group>"; };
+		454FFCAC260027F400E2CC52 /* PodcastFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastFeedLoaderTests.swift; sourceTree = "<group>"; };
+		454FFCB72601010300E2CC52 /* PodcastDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PodcastDetail.storyboard; sourceTree = "<group>"; };
+		454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailViewController.swift; sourceTree = "<group>"; };
+		454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailHeaderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				454FFC6B25FE968600E2CC52 /* Kingfisher in Frameworks */,
+				454FFC9725FFD04600E2CC52 /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +115,9 @@
 		454FFC2F25FCFD2500E2CC52 /* PodCastApp */ = {
 			isa = PBXGroup;
 			children = (
+				454FFCB6260100E700E2CC52 /* PodcastDetail */,
+				454FFC9D25FFD05600E2CC52 /* Models */,
+				454FFC9A25FFD04C00E2CC52 /* Data */,
 				454FFC6D25FEA1B000E2CC52 /* API */,
 				454FFC5D25FD189E00E2CC52 /* Utility */,
 				454FFC4725FCFE4300E2CC52 /* Theme.swift */,
@@ -147,9 +166,37 @@
 			isa = PBXGroup;
 			children = (
 				454FFC7725FEDB4400E2CC52 /* TopPodcastAPITests.swift */,
+				454FFCAC260027F400E2CC52 /* PodcastFeedLoaderTests.swift */,
 				454FFC7925FEDB4400E2CC52 /* Info.plist */,
 			);
 			path = PodCastAppTests;
+			sourceTree = "<group>";
+		};
+		454FFC9A25FFD04C00E2CC52 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				454FFCA225FFD0C200E2CC52 /* PodcastFeedLoader.swift */,
+				454FFCA625FFD11F00E2CC52 /* PodcastLoadingError.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		454FFC9D25FFD05600E2CC52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				454FFC9E25FFD06500E2CC52 /* Podcast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		454FFCB6260100E700E2CC52 /* PodcastDetail */ = {
+			isa = PBXGroup;
+			children = (
+				454FFCB72601010300E2CC52 /* PodcastDetail.storyboard */,
+				454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */,
+				454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */,
+			);
+			path = PodcastDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +217,7 @@
 			name = PodCastApp;
 			packageProductDependencies = (
 				454FFC6A25FE968600E2CC52 /* Kingfisher */,
+				454FFC9625FFD04600E2CC52 /* FeedKit */,
 			);
 			productName = PodCastApp;
 			productReference = 454FFC2D25FCFD2500E2CC52 /* PodCastApp.app */;
@@ -222,6 +270,7 @@
 			mainGroup = 454FFC2425FCFD2500E2CC52;
 			packageReferences = (
 				454FFC6925FE968600E2CC52 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				454FFC9525FFD04600E2CC52 /* XCRemoteSwiftPackageReference "FeedKit" */,
 			);
 			productRefGroup = 454FFC2E25FCFD2500E2CC52 /* Products */;
 			projectDirPath = "";
@@ -240,6 +289,7 @@
 			files = (
 				454FFC3D25FCFD2700E2CC52 /* LaunchScreen.storyboard in Resources */,
 				454FFC3A25FCFD2700E2CC52 /* Assets.xcassets in Resources */,
+				454FFCB82601010300E2CC52 /* PodcastDetail.storyboard in Resources */,
 				454FFC4D25FD089700E2CC52 /* Search.storyboard in Resources */,
 				454FFC3825FCFD2500E2CC52 /* Main.storyboard in Resources */,
 			);
@@ -259,16 +309,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454FFCA325FFD0C200E2CC52 /* PodcastFeedLoader.swift in Sources */,
 				454FFC6625FD262900E2CC52 /* SearchResultViewModel.swift in Sources */,
 				454FFC8625FEF23100E2CC52 /* SearchResult.swift in Sources */,
+				454FFC9F25FFD06500E2CC52 /* Podcast.swift in Sources */,
 				454FFC9025FFB65300E2CC52 /* PodcastSearchAPI.swift in Sources */,
 				454FFC4825FCFE4300E2CC52 /* Theme.swift in Sources */,
 				454FFC5F25FD18B900E2CC52 /* ReusableView.swift in Sources */,
 				454FFC5425FD178800E2CC52 /* SearchResultCell.swift in Sources */,
+				454FFCA725FFD11F00E2CC52 /* PodcastLoadingError.swift in Sources */,
 				454FFC8A25FFACEB00E2CC52 /* APIClient.swift in Sources */,
 				454FFC5B25FD189300E2CC52 /* SearchViewController.swift in Sources */,
+				454FFCC02601138C00E2CC52 /* PodcastDetailHeaderViewController.swift in Sources */,
 				454FFC6F25FEA1C300E2CC52 /* TopPodcastsAPI.swift in Sources */,
 				454FFC3125FCFD2500E2CC52 /* AppDelegate.swift in Sources */,
+				454FFCBC2601014800E2CC52 /* PodcastDetailViewController.swift in Sources */,
 				454FFC6325FD251C00E2CC52 /* UITableView+ReuseIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				454FFC7825FEDB4400E2CC52 /* TopPodcastAPITests.swift in Sources */,
+				454FFCAD260027F400E2CC52 /* PodcastFeedLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +602,14 @@
 				minimumVersion = 6.2.1;
 			};
 		};
+		454FFC9525FFD04600E2CC52 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -553,6 +617,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 454FFC6925FE968600E2CC52 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		454FFC9625FFD04600E2CC52 /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 454FFC9525FFD04600E2CC52 /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

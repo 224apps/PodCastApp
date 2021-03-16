@@ -46,10 +46,8 @@ class SearchViewController: UITableViewController {
                     self.recommendedPodcasts =  response.feed.results.map(SearchResult.init)
                     self.results = self.recommendedPodcasts
                     self.tableView.reloadData()
-                    
                 case.failure(let error):
                     print("Error loading recommended podcasts: \(error.localizedDescription)")
-                    
             }
         }
     }

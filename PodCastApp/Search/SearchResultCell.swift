@@ -59,5 +59,4 @@ class SearchResultCell: UITableViewCell {
         artworkImageView.kf.cancelDownloadTask()
         artworkImageView.image = nil
     }
-    
 }
