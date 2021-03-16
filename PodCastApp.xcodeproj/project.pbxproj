@@ -32,6 +32,7 @@
 		454FFCB82601010300E2CC52 /* PodcastDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454FFCB72601010300E2CC52 /* PodcastDetail.storyboard */; };
 		454FFCBC2601014800E2CC52 /* PodcastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */; };
 		454FFCC02601138C00E2CC52 /* PodcastDetailHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */; };
+		454FFCC4260120E600E2CC52 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		454FFCB72601010300E2CC52 /* PodcastDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PodcastDetail.storyboard; sourceTree = "<group>"; };
 		454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailViewController.swift; sourceTree = "<group>"; };
 		454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailHeaderViewController.swift; sourceTree = "<group>"; };
+		454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				454FFCB72601010300E2CC52 /* PodcastDetail.storyboard */,
 				454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */,
 				454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */,
+				454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */,
 			);
 			path = PodcastDetail;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				454FFC8625FEF23100E2CC52 /* SearchResult.swift in Sources */,
 				454FFC9F25FFD06500E2CC52 /* Podcast.swift in Sources */,
 				454FFC9025FFB65300E2CC52 /* PodcastSearchAPI.swift in Sources */,
+				454FFCC4260120E600E2CC52 /* GradientBackgroundView.swift in Sources */,
 				454FFC4825FCFE4300E2CC52 /* Theme.swift in Sources */,
 				454FFC5F25FD18B900E2CC52 /* ReusableView.swift in Sources */,
 				454FFC5425FD178800E2CC52 /* SearchResultCell.swift in Sources */,
