@@ -33,6 +33,8 @@
 		454FFCBC2601014800E2CC52 /* PodcastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */; };
 		454FFCC02601138C00E2CC52 /* PodcastDetailHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */; };
 		454FFCC4260120E600E2CC52 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */; };
+		454FFCCA260128E300E2CC52 /* GenreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCC9260128E300E2CC52 /* GenreLabel.swift */; };
+		454FFCCE26012B6200E2CC52 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCCD26012B6200E2CC52 /* SeparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailViewController.swift; sourceTree = "<group>"; };
 		454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailHeaderViewController.swift; sourceTree = "<group>"; };
 		454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
+		454FFCC9260128E300E2CC52 /* GenreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreLabel.swift; sourceTree = "<group>"; };
+		454FFCCD26012B6200E2CC52 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,8 @@
 				454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */,
 				454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */,
 				454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */,
+				454FFCC9260128E300E2CC52 /* GenreLabel.swift */,
+				454FFCCD26012B6200E2CC52 /* SeparatorView.swift */,
 			);
 			path = PodcastDetail;
 			sourceTree = "<group>";
@@ -315,7 +321,9 @@
 				454FFCA325FFD0C200E2CC52 /* PodcastFeedLoader.swift in Sources */,
 				454FFC6625FD262900E2CC52 /* SearchResultViewModel.swift in Sources */,
 				454FFC8625FEF23100E2CC52 /* SearchResult.swift in Sources */,
+				454FFCCE26012B6200E2CC52 /* SeparatorView.swift in Sources */,
 				454FFC9F25FFD06500E2CC52 /* Podcast.swift in Sources */,
+				454FFCCA260128E300E2CC52 /* GenreLabel.swift in Sources */,
 				454FFC9025FFB65300E2CC52 /* PodcastSearchAPI.swift in Sources */,
 				454FFCC4260120E600E2CC52 /* GradientBackgroundView.swift in Sources */,
 				454FFC4825FCFE4300E2CC52 /* Theme.swift in Sources */,
