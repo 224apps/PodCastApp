@@ -22,7 +22,10 @@ class PodcastDetailHeaderViewController: UIViewController {
     var podcast: Podcast? {
         didSet{
             if isViewLoaded, let podcast = podcast {
-                updateUI(for: podcast)
+                UIView.animate(withDuration: 0.4) {
+                    self.updateUI(for: podcast)
+                    self.view.layoutIfNeeded()
+                }
             }
         }
     }
@@ -45,8 +48,9 @@ class PodcastDetailHeaderViewController: UIViewController {
         titleLabel.text = podcast.title
         authorLabel.text = podcast.author
         genreLabel.text = podcast.primaryGenre
-        descriptionLabel.text = podcast.description
+        descriptionLabel.text = podcast.description?.strippingHTML().trimmingCharacters(in: .whitespacesAndNewlines)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let podcast = podcast {

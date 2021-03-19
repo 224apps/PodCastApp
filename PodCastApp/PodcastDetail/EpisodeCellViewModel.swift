@@ -32,7 +32,7 @@ struct EpisodeCellViewModel {
     }
     
     var description: String? {
-        return episode.description
+        return episode.description?.strippingHTML().trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     var info: String {

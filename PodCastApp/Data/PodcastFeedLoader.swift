@@ -11,8 +11,8 @@ import FeedKit
 
 class PodcastFeedLoader {
     
-    func fetch(feed: URL, completion: @escaping (Result<Podcast, PodcastLoadingError>) -> Void) {
-        let req = URLRequest(url:feed, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 60)
+    func fetch(lookupInfo: PodcastLookupInfo, completion: @escaping (Result<Podcast, PodcastLoadingError>) -> Void) {
+        let req = URLRequest(url:lookupInfo.feedURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 60)
         
         URLSession.shared.dataTask(with: req) { data, response, error in
             if let error = error {
@@ -26,7 +26,7 @@ class PodcastFeedLoader {
             switch http.statusCode {
                 case 200:
                     if let data = data {
-                        self.loadFeed(data: data, completion: completion)
+                        self.loadFeed(lookupInfo: lookupInfo, data: data, completion: completion)
                     }
                     
                 case 404:
@@ -42,7 +42,7 @@ class PodcastFeedLoader {
         }.resume()
     }
     
-    func loadFeed(data: Data, completion: @escaping (Result<Podcast, PodcastLoadingError>) -> Void) {
+    func loadFeed(lookupInfo: PodcastLookupInfo, data: Data, completion: @escaping (Result<Podcast, PodcastLoadingError>) -> Void) {
         let parser = FeedParser(data: data)
         parser.parseAsync { parseResult in
             let result: Result<Podcast, PodcastLoadingError>
@@ -51,9 +51,9 @@ class PodcastFeedLoader {
                     case .success(let feed):
                         switch feed {
                             case .atom(let atom):
-                                result = try .success(self.convert(atom: atom))
+                                result = try .success(self.convert(atom: atom, lookupInfo: lookupInfo))
                             case .rss(let rss):
-                                result = try .success(self.convert(rss: rss))
+                                result = try .success(self.convert(rss: rss,lookupInfo: lookupInfo))
                             case .json(_): fatalError()
                         }
                     case .failure(let e):
@@ -70,7 +70,7 @@ class PodcastFeedLoader {
         }
     }
     
-    private func convert(atom: AtomFeed) throws -> Podcast {
+    private func convert(atom: AtomFeed, lookupInfo: PodcastLookupInfo) throws -> Podcast {
         guard let name = atom.title else { throw PodcastLoadingError.feedMissingData("title")  }
         
         let author = atom.authors?.compactMap({ $0.name }).joined(separator: ", ") ?? ""
@@ -81,7 +81,7 @@ class PodcastFeedLoader {
         
         let description = atom.subtitle?.value ?? ""
         
-        let p = Podcast()
+        let p = Podcast(id: lookupInfo.id, feedURL: lookupInfo.feedURL)
         p.title = name
         p.author = author
         p.artworkURL = logoURL
@@ -98,7 +98,7 @@ class PodcastFeedLoader {
         return p
     }
     
-    private func convert(rss: RSSFeed) throws -> Podcast {
+    private func convert(rss: RSSFeed, lookupInfo: PodcastLookupInfo) throws -> Podcast {
         guard let title = rss.title else { throw PodcastLoadingError.feedMissingData("title") }
         guard let author = rss.iTunes?.iTunesAuthor ?? rss.iTunes?.iTunesOwner?.name else {
             throw PodcastLoadingError.feedMissingData("itunes:author, itunes:owner name")
@@ -108,7 +108,7 @@ class PodcastFeedLoader {
             throw PodcastLoadingError.feedMissingData("itunes:image url")
         }
         
-        let p = Podcast()
+        let p = Podcast(id: lookupInfo.id, feedURL: lookupInfo.feedURL)
         p.title = title
         p.author = author
         p.artworkURL = logoURL

@@ -69,11 +69,12 @@ class SearchViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let searchResult = results[indexPath.row]
-        dataManager.lookup(podcastID: searchResult.id){ result in
+        
+        dataManager.lookupInfo(for: searchResult){ result in
             switch result {
-            case .success(let searchResult):
-                if let url = searchResult?.artworkUrl {
-                    self.showPodcast(with: url)
+            case .success(let lookupInfo):
+                if let lookupInfo = lookupInfo {
+                    self.showPodcast(with: lookupInfo)
                 } else {
                     print("Podcast not found")
                 }
@@ -83,9 +84,9 @@ class SearchViewController: UITableViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
-    private func showPodcast(with feedURL: URL){
+    private func showPodcast(with lookupInfo: PodcastLookupInfo){
         let detailVC = UIStoryboard(name:"PodcastDetail", bundle: nil).instantiateInitialViewController() as! PodcastDetailViewController
-        detailVC.feedURL = feedURL
+        detailVC.lookUpInfo = lookupInfo
         show(detailVC, sender: self)
     }
 }

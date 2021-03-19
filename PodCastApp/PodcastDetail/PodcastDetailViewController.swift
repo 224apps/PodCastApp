@@ -8,7 +8,8 @@
 import UIKit
 
 class PodcastDetailViewController: UITableViewController {
-    var feedURL: URL?
+    
+    var lookUpInfo: PodcastLookupInfo!
     
     var podcast: Podcast? {
         didSet {
@@ -19,10 +20,14 @@ class PodcastDetailViewController: UITableViewController {
     
     var headerViewController: PodcastDetailHeaderViewController!
     
-    private func loadPodcast() {
-        guard let feedURL = feedURL  else { return }
-        PodcastFeedLoader().fetch(feed: feedURL) { (result) in
-//            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        headerViewController = children.compactMap{ $0 as? PodcastDetailHeaderViewController }.first
+        loadPodcast(lookupInfo: lookUpInfo)
+    }
+    
+    private func loadPodcast(lookupInfo: PodcastLookupInfo) {
+        PodcastFeedLoader().fetch(lookupInfo: lookupInfo) { (result) in
             switch result {
                 case .success(let podcast):
                     self.podcast = podcast
@@ -32,7 +37,7 @@ class PodcastDetailViewController: UITableViewController {
                                                    message: "Error loading feed \(error.localizedDescription)",
                                                    preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (_) in
-                        self.loadPodcast()
+                        self.loadPodcast(lookupInfo: lookupInfo)
                     }))
                     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
@@ -56,11 +61,24 @@ class PodcastDetailViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - Scrolling
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        headerViewController = children.compactMap{ $0 as? PodcastDetailHeaderViewController }.first
-        loadPodcast()
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        adjustParallax(scrollView)
+    }
+
+    private func adjustParallax(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let headerView = headerViewController.view
+        
+        if offsetY < 0 {
+            headerView?.superview?.clipsToBounds = false
+            headerView?.transform = CGAffineTransform(translationX: 0, y: offsetY / 10)
+            headerView?.alpha = 1
+        }else {
+            headerView?.superview?.clipsToBounds = false
+            headerView?.transform = CGAffineTransform(translationX: 0, y: offsetY / 3)
+            headerView?.alpha =   1 - (offsetY / headerView!.frame.height * 0.90)
+        }
     }
 }
