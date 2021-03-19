@@ -43,9 +43,7 @@ class SearchResultCell: UITableViewCell {
         podcstAuthorLabel.text = result.author
         
         if let url = result.artworkUrl {
-            let options: KingfisherOptionsInfo = [
-                .transition(.fade(0.5))
-            ]
+            let options: KingfisherOptionsInfo = [.transition(.fade(0.5))]
             artworkImageView.kf.setImage(with: url,options: options)
         }
         

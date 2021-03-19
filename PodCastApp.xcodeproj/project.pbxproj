@@ -35,6 +35,12 @@
 		454FFCC4260120E600E2CC52 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */; };
 		454FFCCA260128E300E2CC52 /* GenreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCC9260128E300E2CC52 /* GenreLabel.swift */; };
 		454FFCCE26012B6200E2CC52 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCCD26012B6200E2CC52 /* SeparatorView.swift */; };
+		454FFCD22601315200E2CC52 /* SubscribeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCD12601315200E2CC52 /* SubscribeButton.swift */; };
+		454FFCD8260132D500E2CC52 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCD7260132D500E2CC52 /* UIImage+Color.swift */; };
+		454FFCDC2601630200E2CC52 /* PodcastDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFCDB2601630200E2CC52 /* PodcastDataManager.swift */; };
+		456F6B492602F188007AE674 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456F6B482602F188007AE674 /* EpisodeCell.swift */; };
+		456F6B4D2602FA79007AE674 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456F6B4C2602FA79007AE674 /* Episode.swift */; };
+		456F6B5126042210007AE674 /* EpisodeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456F6B5026042210007AE674 /* EpisodeCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +84,12 @@
 		454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		454FFCC9260128E300E2CC52 /* GenreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreLabel.swift; sourceTree = "<group>"; };
 		454FFCCD26012B6200E2CC52 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		454FFCD12601315200E2CC52 /* SubscribeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeButton.swift; sourceTree = "<group>"; };
+		454FFCD7260132D500E2CC52 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		454FFCDB2601630200E2CC52 /* PodcastDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDataManager.swift; sourceTree = "<group>"; };
+		456F6B482602F188007AE674 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		456F6B4C2602FA79007AE674 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		456F6B5026042210007AE674 /* EpisodeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +166,7 @@
 				454FFC5E25FD18B900E2CC52 /* ReusableView.swift */,
 				454FFC6225FD251C00E2CC52 /* UITableView+ReuseIdentifier.swift */,
 				454FFC6525FD262900E2CC52 /* SearchResultViewModel.swift */,
+				454FFCD7260132D500E2CC52 /* UIImage+Color.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -183,6 +196,7 @@
 			children = (
 				454FFCA225FFD0C200E2CC52 /* PodcastFeedLoader.swift */,
 				454FFCA625FFD11F00E2CC52 /* PodcastLoadingError.swift */,
+				454FFCDB2601630200E2CC52 /* PodcastDataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -191,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				454FFC9E25FFD06500E2CC52 /* Podcast.swift */,
+				456F6B4C2602FA79007AE674 /* Episode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,11 +214,14 @@
 			isa = PBXGroup;
 			children = (
 				454FFCB72601010300E2CC52 /* PodcastDetail.storyboard */,
+				454FFCD12601315200E2CC52 /* SubscribeButton.swift */,
 				454FFCBB2601014800E2CC52 /* PodcastDetailViewController.swift */,
 				454FFCBF2601138C00E2CC52 /* PodcastDetailHeaderViewController.swift */,
 				454FFCC3260120E600E2CC52 /* GradientBackgroundView.swift */,
 				454FFCC9260128E300E2CC52 /* GenreLabel.swift */,
 				454FFCCD26012B6200E2CC52 /* SeparatorView.swift */,
+				456F6B482602F188007AE674 /* EpisodeCell.swift */,
+				456F6B5026042210007AE674 /* EpisodeCellViewModel.swift */,
 			);
 			path = PodcastDetail;
 			sourceTree = "<group>";
@@ -319,10 +337,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				454FFCA325FFD0C200E2CC52 /* PodcastFeedLoader.swift in Sources */,
+				456F6B5126042210007AE674 /* EpisodeCellViewModel.swift in Sources */,
+				456F6B4D2602FA79007AE674 /* Episode.swift in Sources */,
 				454FFC6625FD262900E2CC52 /* SearchResultViewModel.swift in Sources */,
 				454FFC8625FEF23100E2CC52 /* SearchResult.swift in Sources */,
 				454FFCCE26012B6200E2CC52 /* SeparatorView.swift in Sources */,
 				454FFC9F25FFD06500E2CC52 /* Podcast.swift in Sources */,
+				454FFCD8260132D500E2CC52 /* UIImage+Color.swift in Sources */,
 				454FFCCA260128E300E2CC52 /* GenreLabel.swift in Sources */,
 				454FFC9025FFB65300E2CC52 /* PodcastSearchAPI.swift in Sources */,
 				454FFCC4260120E600E2CC52 /* GradientBackgroundView.swift in Sources */,
@@ -331,12 +352,15 @@
 				454FFC5425FD178800E2CC52 /* SearchResultCell.swift in Sources */,
 				454FFCA725FFD11F00E2CC52 /* PodcastLoadingError.swift in Sources */,
 				454FFC8A25FFACEB00E2CC52 /* APIClient.swift in Sources */,
+				454FFCDC2601630200E2CC52 /* PodcastDataManager.swift in Sources */,
 				454FFC5B25FD189300E2CC52 /* SearchViewController.swift in Sources */,
 				454FFCC02601138C00E2CC52 /* PodcastDetailHeaderViewController.swift in Sources */,
 				454FFC6F25FEA1C300E2CC52 /* TopPodcastsAPI.swift in Sources */,
 				454FFC3125FCFD2500E2CC52 /* AppDelegate.swift in Sources */,
 				454FFCBC2601014800E2CC52 /* PodcastDetailViewController.swift in Sources */,
 				454FFC6325FD251C00E2CC52 /* UITableView+ReuseIdentifier.swift in Sources */,
+				456F6B492602F188007AE674 /* EpisodeCell.swift in Sources */,
+				454FFCD22601315200E2CC52 /* SubscribeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

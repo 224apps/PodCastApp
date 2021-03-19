@@ -100,9 +100,9 @@
                                         <rect key="frame" x="28" y="188" width="358" height="59"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="UyG-H7-nNd" userLabel="Labels Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="266" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="178" height="59"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkw-8q-aWq">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Podcast Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkw-8q-aWq">
                                                         <rect key="frame" x="0.0" y="0.0" width="97" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                         <color key="textColor" red="0.556997776" green="0.55651599169999999" blue="0.57641011480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -130,8 +130,8 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7g-Ac-991" customClass="SubscribeButton" customModule="PodcastApp" customModuleProvider="target">
-                                                <rect key="frame" x="276" y="14.5" width="82" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7g-Ac-991" customClass="SubscribeButton" customModule="PodCastApp" customModuleProvider="target">
+                                                <rect key="frame" x="188" y="7" width="170" height="45"/>
                                                 <state key="normal" title="SUBSCRIBE"/>
                                             </button>
                                         </subviews>
@@ -183,8 +183,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authorLabel" destination="Zwh-7V-kfW" id="ZEn-Tt-ES4"/>
+                        <outlet property="descriptionLabel" destination="Tq7-87-rf0" id="ym1-FD-rMW"/>
+                        <outlet property="genreLabel" destination="9Sl-kz-gU9" id="eJs-2o-mP9"/>
                         <outlet property="imageView" destination="dYV-Bf-bEo" id="hXa-zf-hU5"/>
-                        <outlet property="suscribeLabel" destination="R7g-Ac-991" id="dUS-5v-kjt"/>
+                        <outlet property="subscribeButton" destination="R7g-Ac-991" id="dUS-5v-kjt"/>
+                        <outlet property="titleLabel" destination="dkw-8q-aWq" id="E63-Qy-yQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2s-zS-6l2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,6 +199,9 @@
     <designables>
         <designable name="9Sl-kz-gU9">
             <size key="intrinsicContentSize" width="51" height="16.5"/>
+        </designable>
+        <designable name="R7g-Ac-991">
+            <size key="intrinsicContentSize" width="170" height="45"/>
         </designable>
     </designables>
 </document>

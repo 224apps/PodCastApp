@@ -17,7 +17,7 @@ class PodcastSearchAPI: APIClient {
         self.session = session
     }
     
-    func search(for term: String, country: String = "us", completion: @escaping (Result<Response, APIError>) -> Void) {
+    func search(for term: String, country: String = "us", completion: @escaping (Result< Response, APIError>) -> Void) {
         
         let url = baseURL.appendingPathComponent("search")
         
@@ -32,6 +32,22 @@ class PodcastSearchAPI: APIClient {
         activeSearchTask?.cancel()
         activeSearchTask = perform(request: request, completion: parseDecodable(completion: completion))
     }
+    
+    func lookup(id:String, country: String = "us", completion: @escaping (Result<SearchResult?, APIError>) -> Void){
+        let url = baseURL.appendingPathComponent("\(country)/lookup")
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+        components.queryItems = [URLQueryItem(name: "id", value: id)]
+        let request = URLRequest(url: components.url!)
+        perform(request: request, completion: parseDecodable{ (result: Result<Response, APIError>) in
+            switch result {
+                case .success(let response):
+                    let result = response.results.first.flatMap(SearchResult.init)
+                    completion(.success(result))
+                case .failure(let error):
+                    completion(.failure(error))
+            }
+        })
+    }
 }
 
 
@@ -44,9 +60,11 @@ extension PodcastSearchAPI {
     
     struct PodcastSearchResult: Decodable {
         let artistName: String
+        let collectionId: Int
         let collectionName: String
         let artworkUrl100: String
         let genreIds: [String]
         let genres: [String]
+        let feedUrl: String
     }
 }

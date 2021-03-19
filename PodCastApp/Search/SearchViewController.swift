@@ -14,8 +14,7 @@ class SearchViewController: UITableViewController {
     private var results: [SearchResult] = []
     private var recommendedPodcasts: [SearchResult] = []
     
-    private let podcastClient = TopPodcastsAPI()
-    private let searchClient = PodcastSearchAPI()
+   private let dataManager = PodcastDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,19 +34,20 @@ class SearchViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidLoad()
+        super.viewDidAppear(true)
         navigationItem.hidesSearchBarWhenScrolling = true
     }
     
     private func loadRecommendedpodcasts(){
-        podcastClient.fetchTopPodcasts(limit: 50, allowExplicit: false) { (result) in
+        
+        dataManager.recommendedPodcasts { result in
             switch result {
-                case .success(let response):
-                    self.recommendedPodcasts =  response.feed.results.map(SearchResult.init)
+                case .success(let podcastResults):
+                    self.recommendedPodcasts = podcastResults
                     self.results = self.recommendedPodcasts
                     self.tableView.reloadData()
-                case.failure(let error):
-                    print("Error loading recommended podcasts: \(error.localizedDescription)")
+                case .failure(let error):
+                    print("Error Loading recommended podcasts \(error.localizedDescription)")
             }
         }
     }
@@ -66,6 +66,28 @@ class SearchViewController: UITableViewController {
         cell.configure(with: searchResult)
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searchResult = results[indexPath.row]
+        dataManager.lookup(podcastID: searchResult.id){ result in
+            switch result {
+            case .success(let searchResult):
+                if let url = searchResult?.artworkUrl {
+                    self.showPodcast(with: url)
+                } else {
+                    print("Podcast not found")
+                }
+            case .failure(let error):
+                print("Error loading podcast: \(error.localizedDescription)")
+            }
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    private func showPodcast(with feedURL: URL){
+        let detailVC = UIStoryboard(name:"PodcastDetail", bundle: nil).instantiateInitialViewController() as! PodcastDetailViewController
+        detailVC.feedURL = feedURL
+        show(detailVC, sender: self)
+    }
 }
 
 
@@ -77,12 +99,12 @@ extension SearchViewController: UISearchResultsUpdating {
             resetToRecommendedPodcasts()
             return
         }
-        searchClient.search(for: term) { (result) in
+        dataManager.search(for: term) { (result) in
             switch result {
-                case .success(let response):
-                    self.results = response.results.map(SearchResult.init)
+                case .success(let searchResults):
+                    self.results = searchResults
                     self.tableView.reloadData()
-                    
+
                 case .failure(let error):
                     print("Error searching podcasts: \(error.localizedDescription)")
             }
